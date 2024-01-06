@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initatial-scale=1.0" />
+    <title>Survey Form</title>
+    <style>
+        * {
+    font-family: Arial, Helvetica, sans-serif; 
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background: var(--color-darkblue);
+  background-image: linear-gradient(
+      115deg,
+      rgba(246, 215, 162, 0.8),
+      rgba(136, 136, 206, 0.7)
+    ),
+    url(https://img.freepik.com/premium-vector/top-view-office-supplies-gadgets_40453-353.jpg?w=1800);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+header {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+body {
+    margin-left: 400px;
+    margin-right: 400px;
+    position: block;
+    background: #fff4cd;
+}
+
+h1 {
+    font-size: 2rem;
+    color: white;
+    text-shadow: 2px 2px black;
+}
+
+p, label {
+    font-size: 1.3rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.container {
+    width: 100%;
+    margin: 25px auto 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+
+form {
+    margin-bottom: 50px;
+    width: 800px;
+}
+
+input, .form-control  {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: inline-block;
+    border-radius: 10px;
+    font-style: italic;
+    color: #eba832;
+}
+
+input::placeholder, select {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #eba832;
+}
+
+input:hover, select:hover {
+    transition: .2s;
+}
+
+option {
+    font-size: 1.2rem;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+option:hover {
+    text-decoration: none;
+    background-color: white;
+    color: #eba832;
+}
+
+label {
+    margin: 5px;
+}
+
+.form-group label > #checkbox {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.form-group {
+    display: grid;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+fieldset {
+    padding-left: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-right: 50px;
+    border: 2px solid white;
+    border-radius: 10px 10px 10px 10px;
+    background-color: white;
+    box-shadow: 7.5px 10px #eba832;
+}
+
+  .input-textarea {
+    display: block;
+    min-height: 120px;
+    padding: 0.625rem;
+    resize: vertical;
+    width: auto;
+    font-size: 1.2rem;
+    font-style: italic;
+    color:#eba832;
+    border-radius: 10px 10px 10px 10px;
+  }
+
+  .input-textarea::placeholder {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #eba832;
+  }
+
+  input[type=checkbox]:active {
+    color: #eba832;
+    font-style: italic;
+  }
+
+  input[type=radio], input {
+    accent-color: #eba832;
+  }
+
+  input[type="submit"] {
+    border-radius: 15px;
+    width: 150px;
+    background-color: #eba832;
+    cursor: pointer;
+    color: white;
+    font-style: normal;
+  }
+
+  .submit {
+    position: block;
+    justify-content: center;
+    text-align: center;
+    margin-top: 20px;
+  }
+    </style>
+  </head>
+  <header>
+    <h1 id="title">Survey Form</h1>
+    <p id="description">Thank you for taking the time to share your thoughts and opinions in our survey.</p>
+    <p> Your input is incredibly valuable to us!</p>
+    </header> 
+  <body>
+    <div class="container">
+    <form id="survey-form" autocomplete="off" method="post" action="">
+      <fieldset>
+      <div class="form-group">
+         <label id="name-label" for="name"><b>Name</b></label>
+          <input 
+          id="name" 
+          type="text" 
+          name="name"
+          placeholder="Enter your name" 
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label id="email-label" for="email"><b>Email</b></label> 
+          <input 
+          id="email"
+          type="email"
+          name="email"
+          placeholder="Enter your email"
+          required
+          />
+      </div>
+      <div class="form-group">
+        <label id="number-label" for="number"><b>Age</b></label> 
+          <input 
+          id="number"
+          type="number"
+          name="age"
+          min="18"
+          max="99"
+          class="form-control"
+          placeholder="Age"
+          />
+      </div>
+      <div class="form-group">
+        <p><b>Which option best describes your current role?</b></p>
+        <select id="dropdown" name="role" class="form-control" required>
+            <option disabled selected value>Select current role</option>
+            <option value="student">Student</option>
+            <option value="job">Employed</option>
+            <option value="learner">Unemployed</option>
+            <option value="not">Prefer not to say</option>
+            <option value="other">Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <p><b>Would you recommend us to a friend?</b></p>
+        <label for="Yes">
+          <input 
+          id="recommend" 
+          type="radio" 
+          name="recommend"
+          value="Yes" 
+          checked>
+          <i>Yes</i></input>
+        </label>
+        <label for="No">
+          <input 
+          id="recommend" 
+          type="radio" 
+          name="recommend" 
+          value="No"
+          checked>
+        <i>No</i></input>
+        </label>
+        <label for="Maybe">
+          <input 
+          id="recommend" 
+          type="radio" 
+          name="recommend"
+          value="maybe"  
+          checked>
+        <i>Maybe</i></input>
+        </label>
+      </div>
+      <div class="form-group">
+        <p><b>What would you like us to improve?</b> <span>(check all that applies)</span></p>
+        <label id="checkbox" for="improve">
+        <input 
+          id="improve"
+          type="checkbox"
+          name="improve"
+          value="1"> <i>Example 1</i>
+        </label>
+        <label>
+        <input 
+          id="improve"
+          type="checkbox"
+          name="improve"
+          value="2"> <i>Example 2</i>
+        </label>
+        <label>
+          <input 
+          id="improve"
+          type="checkbox"
+          name="improve"
+          value="3"> <i>Example 3</i>
+        </label>
+        <label>
+          <input 
+          id="improve"
+          type="checkbox"
+          name="improve"
+          value="4"> <i>Example 4</i>
+        </label>
+        <label>
+        <input 
+          id="improve"
+          type="checkbox"
+          name="improve"
+          value="5"> <i>Example 5</i>
+        </label>
+    </div>
+    <div class="form-group">
+        <p><b>Any comments or suggestions?</b></p>
+        <textarea
+          id="comments"
+          class="input-textarea"
+          name="comment"
+          placeholder="Enter your comment here..."
+        ></textarea>
+    </div> 
+    <div class="submit">  
+        <input 
+          id="submit"
+          type="submit"
+          value="Submit">
+      </fieldset>
+    </div>
+</div>
+    </body>
+</html>
+
